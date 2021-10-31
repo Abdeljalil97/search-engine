@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}{{block.super}} Results {% endblock %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg p-3 mb-5">
+  <a class="navbar-brand ml-4" href="{% url 'Home' %}"><i class="fas fa-arrow-left fa-2x"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="container d-flex justify-content-center">
+      <h4 class="navbar-text text-white">
+    Django Search Engine
+  </h4>
+  </div>
+
+</nav>
+<div class="container" style="margin-bottom: 85px;">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-2">
+      <h4 class="panel panel-blue text-center" >IEEE</h4>
+        <div class="justify-content-center">
+          {% for i,j in google %}
+         <a href="{{ i }}" class="btn mt-3 w-100">{{ j }}</a><br>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-2">
+      <h4  class="panel panel-blue text-center" >Springer</h4>
+      <div class="justify-content-center">
+          {% for i,j in yahoo %}
+         <a href="{{ i }}" class="btn mt-3 w-100">{{ j }}</a><br>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-2">
+      <h4  class="panel panel-blue text-center" >Scops</h4>
+      <div class="justify-content-center">
+          {% for i,j in duck %}
+         <a href="{{ i }}" class="btn mt-3 w-100">{{ j }}</a><br>
+        {% endfor %}
+        </div>
+    </div>
+    
+<footer>
+        <p>Copyright &copy; | All Rights Reserved by <a class="footer-a" href="">Ayman and Amine</a></p>
+</footer>
+{% endblock content %}

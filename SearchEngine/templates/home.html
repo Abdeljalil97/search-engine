@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}{{block.super}} HomePage {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="center">
+<span id="typed" style="font-size:35px;"></span>
+    </div>
+</div>
+<div class="wrapper">
+    <form action="{% url 'Result' %}" method="post">
+        {% csrf_token %}
+    <input type="text" placeholder="Search..." name="search">
+    <div class="search"></div>
+    
+    </form>
+</div>
+<div class="container">
+    
+
+
+
+
+    <form action="{% url 'Result' %}" method="post">
+        {% csrf_token %}
+    <input type="radio" placeholder="Search..." name="search">
+    <label valu>
+    
+    </form>
+</div>
+
+
+<footer>
+        <p>Copyright &copy; | All Rights Reserved by <a class="footer-a" href="">Amine and  Ayman</a></p>
+</footer>
+{% endblock content %}
